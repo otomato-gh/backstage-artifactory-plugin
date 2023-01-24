@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Grid } from '@material-ui/core';
+import { EntityOtom8OArtifactoryContent } from '@internal/plugin-otom8o-artifactory';
 import {
   EntityApiDefinitionCard,
   EntityConsumedApisCard,
@@ -164,6 +165,9 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
+    </EntityLayout.Route>
+    <EntityLayout.Route path="/artifactory" title="Artifactory">
+      <EntityOtom8OArtifactoryContent />
     </EntityLayout.Route>
   </EntityLayout>
 );
