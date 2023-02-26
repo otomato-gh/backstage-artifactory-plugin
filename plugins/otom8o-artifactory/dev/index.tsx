@@ -4,9 +4,20 @@ import { EntityProvider } from '@backstage/plugin-catalog-react';
 import { createDevApp } from '@backstage/dev-utils';
 import { otom8OArtifactoryPlugin, Otom8OArtifactoryPage, EntityOtom8OArtifactoryContent } from '../src/plugin';
 import { otom8OArtifactoryPluginApi, otom8OArtifactoryPluginApiRef } from '../src';
+import { TestApiProvider } from '@backstage/test-utils';
 
 const mockEntity: Entity = {
-  ...
+  apiVersion: 'backstage.io/v1alpha1',
+  kind: 'Component',
+  metadata: {
+    name: 'backstage',
+    description: 'backstage.io',
+  },
+  spec: {
+    lifecycle: 'production',
+    type: 'service',
+    owner: 'user:guest',
+  },
 };
 
 class MockArtifactoryPluginClient implements otom8OArtifactoryPluginApi {
