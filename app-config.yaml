@@ -103,3 +103,17 @@ catalog:
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
     #   rules:
     #     - allow: [User, Group]
+
+kubernetes:
+  serviceLocatorMethod:
+    type: 'multiTenant'
+  clusterLocatorMethods:
+    - type: 'config'
+      clusters:
+        - url: https://0.0.0.0:49253
+          name: k3d-mycluster
+          authProvider: 'serviceAccount'
+          skipTLSVerify: false
+          skipMetricsLookup: true
+          serviceAccountToken: eyJhbGciOiJSUzI1NiIsImtpZCI6IkhjZWRMM1NXSDMwOTBUSHVHWWNUMkotU1hkX1FrTGl0XzdjSktiajlaekUifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJydWxlci10b2tlbi1sd3BjYiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJydWxlciIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjhmYTAzNTU1LTdjYWEtNDg5Ni05MmNkLWE1OWRjZjk2ZDliYyIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTpydWxlciJ9.0rm7X4DlcvjcEp7rEcLkhNmcS_gXBtCbI9OJ4X3IZdDov0AnWxFmHr7fGYFxSxIYpCR2pR7FT3BCVUKCpdTKT1HzKtVpRfYrEOJMzBUhP8MRU9M6Ntt1LsUDyGFD8a6iTbkUtlU5xE5LP5IH7JP-7fOllUY95jxHU3NExvA1DbxZmOaiWbQt9nFG4O9Jzg_bswf-wOVhiua2wVQjNfyHBKqAhUsEiaxAy1xKtK-BJrlSh_O2nUy1nkjF-mPITra0XQ8rdtBnRSqyBQI70wqDu-qNlhxESivDljjaJQNaR8-fxcnBB3hzxVyFlWPN7vqnc-CUOaxaSSVJq1i-6Zv7bA
+          caData: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJlRENDQVIyZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQWpNU0V3SHdZRFZRUUREQmhyTTNNdGMyVnkKZG1WeUxXTmhRREUyTnpjME1UZzNORGt3SGhjTk1qTXdNakkyTVRNek9UQTVXaGNOTXpNd01qSXpNVE16T1RBNQpXakFqTVNFd0h3WURWUVFEREJock0zTXRjMlZ5ZG1WeUxXTmhRREUyTnpjME1UZzNORGt3V1RBVEJnY3Foa2pPClBRSUJCZ2dxaGtqT1BRTUJCd05DQUFScFJVUXpRdWtQTkxsVU9iZmkxNDhzZEhHZnVhTmE4MXlwRUdlRExFeEQKMjJZWjNPcXJkVFR1MzJuSXVrSVRHZk04TTM0RW1VVDNKeEdDN0dFM0xJSUVvMEl3UURBT0JnTlZIUThCQWY4RQpCQU1DQXFRd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFRmdRVXdQYWJ0dDZqdWQ0OFJHcDlUZklVCnNmWnpJNjB3Q2dZSUtvWkl6ajBFQXdJRFNRQXdSZ0loQUo4ZmV6NEl3SzVMTTNod3lTQWV5SXl2T09aY3ZiUmYKa3c2cGxwalZQdXZVQWlFQW50V3BESk0ybHltYTdRRHV3ZEpBVHI0bXJpVmNJdmdubkh1TDBZc3pUbFU9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
