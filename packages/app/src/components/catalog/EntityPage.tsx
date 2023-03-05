@@ -56,7 +56,7 @@ import {
 
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
-import { EntityKubernetesContent } from '@backstage/plugin-kubernetes';
+import { mgrPlugins } from '@internal/plugin-mgr';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -171,10 +171,11 @@ const serviceEntityPage = (
       <EntityOtom8OArtifactoryContent />
     </EntityLayout.Route>
 
-    <EntityLayout.Route path="/kubernetes" title="Kubernetes">
-      <EntityKubernetesContent refreshIntervalMs={30000} />
-    </EntityLayout.Route>
-    
+    {mgrPlugins.map(({path, title, MyEntity, props}) => (
+    <EntityLayout.Route path={path} title={title}>
+    <MyEntity {...props} />
+  </EntityLayout.Route>
+    ))}
   </EntityLayout>
 );
 
