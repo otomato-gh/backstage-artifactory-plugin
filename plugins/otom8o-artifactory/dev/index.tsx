@@ -2,7 +2,7 @@ import React from 'react';
 import { Entity } from '@backstage/catalog-model';
 import { EntityProvider } from '@backstage/plugin-catalog-react';
 import { createDevApp } from '@backstage/dev-utils';
-import { otom8OArtifactoryPlugin, Otom8OArtifactoryPage, EntityOtom8OArtifactoryContent } from '../src/plugin';
+import { otom8OArtifactoryPlugin, EntityOtom8OArtifactoryContent } from '../src/plugin';
 import { otom8OArtifactoryPluginApi, otom8OArtifactoryPluginApiRef } from '../src';
 import { TestApiProvider } from '@backstage/test-utils';
 

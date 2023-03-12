@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Grid } from '@material-ui/core';
-import { EntityOtom8OArtifactoryContent } from '@internal/plugin-otom8o-artifactory';
+//import { EntityOtom8OArtifactoryContent } from '@internal/plugin-otom8o-artifactory';
 import {
   EntityApiDefinitionCard,
   EntityConsumedApisCard,
@@ -56,7 +56,7 @@ import {
 
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
-import { mgrPlugins } from '@internal/plugin-mgr';
+import { mgrPlugins } from '@stagectl/plugin-mgr'
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -164,16 +164,13 @@ const serviceEntityPage = (
       </Grid>
     </EntityLayout.Route>
 
-    <EntityLayout.Route path="/docs" title="Docs">
+    {/* <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
-    </EntityLayout.Route>
-    <EntityLayout.Route path="/artifactory" title="Artifactory">
-      <EntityOtom8OArtifactoryContent />
-    </EntityLayout.Route>
+    </EntityLayout.Route> */}
 
-    {mgrPlugins.map(({path, title, MyEntity, props}) => (
-    <EntityLayout.Route path={path} title={title}>
-    <MyEntity {...props} />
+    {mgrPlugins.map((e) => (
+    <EntityLayout.Route path={e.path} title={e.title}>
+    <e.MyEntity {...e.props} />
   </EntityLayout.Route>
     ))}
   </EntityLayout>

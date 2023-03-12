@@ -1,7 +1,7 @@
-import { dummyPlugin } from './plugin';
+import { mgrPlugin } from './plugin';
 
-describe('dummy', () => {
+describe('plugin-mgr', () => {
   it('should export plugin', () => {
-    expect(dummyPlugin).toBeDefined();
+    expect(mgrPlugin).toBeDefined();
   });
 });
